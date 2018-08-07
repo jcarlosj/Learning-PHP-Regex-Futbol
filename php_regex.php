@@ -11,7 +11,7 @@ while( !feof( $file ) ) {          # feof — Comprueba si el puntero a un archi
     $line = fgets( $file );        # fgets — Obtiene una línea desde el puntero a un fichero
     # Valida nuestra expresión regular
     if( preg_match(                # preg_match — Realiza una comparación con una expresión regular
-            '/^2018\-01\-(\d{2,2}),.*$/',    # Expresión Regular, debe ir entre comillas sencillas (es lo recomendado) y slashes /
+            '/^(\d{4}\-\d{2}\-\d{2,2}),(.+),(.+),(\d+),(\d+).*$/i',    # Expresión Regular, agrega el flag i (indica que es case sentitive))
             $line,                            # Línea
             $matches                          # Matches
         )
@@ -21,6 +21,7 @@ while( !feof( $file ) ) {          # feof — Comprueba si el puntero a un archi
     }
     else {
         $nomatch++;
+        # echo $line;
     }
 }
 
