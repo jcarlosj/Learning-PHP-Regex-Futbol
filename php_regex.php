@@ -1,5 +1,6 @@
 <?php
 
+$tiempo = time();
 $match = 0;
 $nomatch = 0;
 
@@ -38,3 +39,4 @@ while( !feof( $file ) ) {          # feof — Comprueba si el puntero a un archi
 fclose( $file );
 
 printf( "\n\naciertos: %d \ndesaciertos: %d\n", $match, $nomatch );
+printf( "tiempo de ejecución: %d segundos: \n", time() - $tiempo );
