@@ -16,7 +16,16 @@ while( !feof( $file ) ) {          # feof — Comprueba si el puntero a un archi
             $matches                          # Matches
         )
     ) {
-        print_r( $matches );
+        if( $matches[ 4 ] == $matches[ 5 ] ) {
+            printf( "Empate:  " );
+        }
+        else if( $matches[ 4 ] > $matches[ 5 ] ) {
+            echo 'Local:  ';
+        }
+        else {
+            echo "Visitante:";
+        }
+        printf( "\t%s, %s [%d-%d] \n", $matches[ 2 ], $matches[ 3 ], $matches[ 4 ], $matches[ 5 ] );
         $match++;
     }
     else {
